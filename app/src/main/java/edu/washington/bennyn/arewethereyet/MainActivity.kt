@@ -1,6 +1,5 @@
 package edu.washington.bennyn.arewethereyet
 
-import android.app.Activity
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
@@ -11,9 +10,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -57,7 +54,6 @@ class MainActivity : AppCompatActivity() {
             val phoneNum = intent!!.getStringExtra("phoneNum")
             val properNum = "(${phoneNum.substring(0, 3)}) ${phoneNum.substring(3, 6)}-${phoneNum.substring(6)}"
             val fullMessage = "${properNum}: ${message}"
-            Log.e("onReceiveTag", fullMessage)
             Toast.makeText(context, fullMessage, Toast.LENGTH_SHORT).show()
         }
     }
